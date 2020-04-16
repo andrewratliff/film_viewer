@@ -4,13 +4,13 @@ require "pry"
 class DatabasePersistence
   attr_reader :db, :logger
 
-  def initialize
-    # @db = if Sinatra::Base.production?
-    #         PG.connect(ENV["DATABASE_URL"])
-    #       else
-    #         PG.connect(dbname: "film_viewer")
-    #       end
-    @db = PG.connect(dbname: "film_viewer")
+  def initialize(logger = nil)
+    @logger = logger
+    @db = if Sinatra::Base.production?
+            PG.connect(ENV["DATABASE_URL"])
+          else
+            PG.connect(dbname: "film_viewer")
+          end
   end
 
   def disconnect
@@ -180,7 +180,12 @@ class DatabasePersistence
   end
 
   def query(statement, *params)
-    puts "#{statement}: #{params}"
+    if @logger
+      logger.info("#{statement}: #{params}")
+    else
+      puts("#{statement}: #{params}")
+    end
+
     db.exec_params(statement, params)
   end
 end
