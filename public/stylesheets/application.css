@@ -1,0 +1,28 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  color: #435757;
+  background: radial-gradient(#eeaeca, #94bbe9);
+  font: 1.4em/1 'Noto Sans', sans-serif;
+}
+
+[type="checkbox"] {
+  display: none;
+}
+
+input + label {
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding: 20px;
+  display: inline-block;
+  width: 200px;
+  height: 100px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+input:checked + label {
+  background-color: yellow;
+}

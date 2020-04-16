@@ -1,0 +1,32 @@
+<h3>
+  <% if @total %>
+    <%= "Total: #{@total}" %>
+  <% end %>
+</h3>
+
+<ul>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Title
+        </th>
+        <th>
+          Year
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+        <% @films.each do |film| %>
+          <tr>
+            <td>
+              <%= film[:title] %>
+            </td>
+            <td>
+              <%= film[:year] %>
+            </td>
+          </tr>
+        <% end %>
+    </tbody>
+  </table>
+</ul>

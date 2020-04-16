@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Film Accolades</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/stylesheets/application.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Film Accolades</h1>
+      <form action="/search" method="get">
+        <fieldset>
+          <input type="checkbox"
+                 name="1"
+                 id="afi_1998"
+                 <% if @ids && @ids.include?(1) %>
+                   checked
+                 <% end %>
+          >
+          <label for="afi_1998">AFI 1998</label>
+          <input type="checkbox"
+                 name="2"
+                 id="afi_2007"
+                 <% if @ids && @ids.include?(2) %>
+                   checked
+                 <% end %>
+          >
+          <label for="afi_2007">AFI 2007</label>
+          <input type="checkbox"
+                 name="3"
+                 id="academy_awards"
+                 <% if @ids && @ids.include?(3) %>
+                   checked
+                 <% end %>
+          >
+          <label for="academy_awards">Academy Awards</label>
+          <input type="checkbox"
+                 name="4"
+                 id="golden_globes"
+                 <% if @ids && @ids.include?(4) %>
+                   checked
+                 <% end %>
+          >
+          <label for="golden_globes">Golden Globes</label>
+          <input type="submit" value="Filter" />
+        </fieldset>
+      </form>
+    </header>
+
+    <main>
+      <%== yield %>
+    </main>
+  </body>
+</html>
