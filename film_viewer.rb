@@ -23,7 +23,9 @@ after do
 end
 
 get "/" do
-  erb :index
+  @films = @storage.all_films.sort_by { |film| film[:year] }
+
+  erb :results
 end
 
 get "/search" do

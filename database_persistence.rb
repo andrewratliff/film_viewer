@@ -17,6 +17,14 @@ class DatabasePersistence
     @db.close
   end
 
+  def view_all_flims
+    sql = "SELECT * FROM films ORDER BY films.year;"
+
+    result = query(sql)
+
+    tuple_to_film_hash(result.first)
+  end
+
   def create_new_association(name)
     sql = "INSERT INTO associations (name) VALUES ($1);"
     query(sql, name)
