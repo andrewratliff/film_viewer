@@ -1,5 +1,14 @@
 {
-  "title": "The Godfather",
-  "year": "1972",
-  "accolades": ["AFI 1998", "AFI 2007", "Academy Award", "Golden Globes"]
+  "films": [
+    {
+      "title": "The Godfather",
+      "year": "1972",
+      "accolades": ["AFI 1998", "AFI 2007", "Academy Award", "Golden Globes"]
+    },
+    {
+      "title": "Citizen Kane",
+      "year": "1941",
+      "accolades": ["AFI 1998", "AFI 2007"]
+    }
+  ]
 }
